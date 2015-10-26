@@ -5,16 +5,43 @@ using System.Text;
 
 namespace bowling
 {
-    class Game
-    {
-        internal void SetPins(int p)
-        {
-            throw new NotImplementedException();
-        }
+     class Game
+     {
+          private int TotalScore = 0;
+          private int[] Pins = new int[20] ;
+          public void SetPins(int p)
+          {
+               TotalScore += p;
+          }
+      //    private int count;
+       /*   public void SetPins(int p)
+          {
+              
+                    if(p==10 && i%2==0)
+                    {
+                         Pins[i] = p;
+                         i += 2;
+                      
+                    }
+                    else
+                    {
+                         Pins[i] = p;
+                    }
+               
+          }*/
 
-        internal int GetFinalScore()
-        {
-            throw new NotImplementedException();
-        }
-    }
+          public int GetScore(int p)
+          {
+               return Pins[p];
+          }
+
+          public int GetFinalScore()
+          {
+               return TotalScore;
+          }
+
+
+      
+
+     }
 }
