@@ -16,7 +16,7 @@ namespace bowling
 
                if(count==20)
                {
-                    if (Pins[18] + Pins[19] == 10)
+                    if (Pins[18] + Pins[19] >= 10)
                          Pins[count] = p;
                }
                else
@@ -38,10 +38,12 @@ namespace bowling
                return Pins[p];
           }
 
+
           public int GetFinalScore()
           {
                for (int i = 0; i < 21; i++)
                {
+                    if(Pins[i])
                     TotalScore += Pins[i];
                }
                return TotalScore;
