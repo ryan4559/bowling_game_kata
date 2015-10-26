@@ -20,8 +20,8 @@ namespace bowling
             }
             Assert.That(g.GetFinalScore(), Is.EqualTo(0));
         }
-   /*     [Test]
-        public void TestGetFinalScore()
+        [Test]
+        public void TestScore()
         {
              Game g = new Game();
              for (int i = 0; i < 20; i+=2)
@@ -35,6 +35,35 @@ namespace bowling
              Assert.That(g.GetScore(19), Is.EqualTo(0));
 
       
-        }*/
+        }
+        [Test]
+        public void TestGetFinalScore()
+        {
+             Game g = new Game();
+             for (int i = 0; i < 20; i += 2)
+             {
+                  g.SetPins(10);
+             }
+
+             Assert.That(g.GetFinalScore(), Is.EqualTo(100));
+
+        }
+        //[Test]
+        //public void Strike()
+        //{
+        //     Game g = new Game();
+        //     for (int i = 0; i < 20; i += 2)
+        //     {
+        //          g.SetPins(10);
+        //     }
+        //     g.SetPins(10);
+
+        //     Assert.That(g.GetFinalScore(), Is.EqualTo(300));
+
+
+        //}
+
+
+
     }
 }

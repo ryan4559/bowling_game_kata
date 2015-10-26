@@ -8,27 +8,30 @@ namespace bowling
      class Game
      {
           private int TotalScore = 0;
-          private int[] Pins = new int[20] ;
+          private int[] Pins = new int[21];
+          private int count = 0;
+          //private int bouns = 0;
           public void SetPins(int p)
           {
-               TotalScore += p;
+
+               if(count==20)
+               {
+                    if (Pins[18] + Pins[19] == 10)
+                         Pins[count] = p;
+               }
+               else
+               if (p == 10 && count % 2 == 0 && count!=18)
+               {         
+                         Pins[count] = p;
+                         count += 2;
+
+               }
+               else
+               {
+                    Pins[count] = p;
+                    count += 1;
+               }
           }
-      //    private int count;
-       /*   public void SetPins(int p)
-          {
-              
-                    if(p==10 && i%2==0)
-                    {
-                         Pins[i] = p;
-                         i += 2;
-                      
-                    }
-                    else
-                    {
-                         Pins[i] = p;
-                    }
-               
-          }*/
 
           public int GetScore(int p)
           {
@@ -37,11 +40,15 @@ namespace bowling
 
           public int GetFinalScore()
           {
+               for (int i = 0; i < 21; i++)
+               {
+                    TotalScore += Pins[i];
+               }
                return TotalScore;
           }
 
 
-      
+
 
      }
 }
